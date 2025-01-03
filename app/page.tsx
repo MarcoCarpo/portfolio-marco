@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="flex justify-center items-center flex-1 gap-10 text-center">
       <div className="flex flex-col gap-4 max-w-lg">
-        <div className="w-52 h-52 relative overflow-hidden rounded-full mx-auto">
+        <div className="w-52 h-52 relative overflow-hidden rounded-full mx-auto shadow-lg shadow-gray-500/50">
           <Image
             src="/images/profile.png"
             alt="Marco Carpona"
@@ -17,10 +17,14 @@ export default function Home() {
           />
         </div>
         <h2 className="text-4xl">
-          Ciao <span className="animate-wave inline-block">✋🏻</span> sono Marco Carpona!
+          Ciao <span className="animate-wave inline-block">✋🏻</span> sono{' '}
+          <span className="font-extrabold main-gradient">Marco Carpona</span>!
         </h2>
         <div>
-          <h2 className="text-xl"> 💻 Sviluppatore web Frontend</h2>
+          <h2 className="text-xl">
+            {' '}
+            💻 Sviluppatore web <span className="main-gradient">Frontend</span>
+          </h2>
           <h2 className="text-xl"> 🍃 Laureato in Global Change Ecology</h2>
           <h2 className="text-xl"> 📍 Trieste (TS), Italia</h2>
         </div>
