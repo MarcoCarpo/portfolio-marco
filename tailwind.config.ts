@@ -6,6 +6,7 @@ export default {
 		'./pages/**/*.{js,ts,jsx,tsx,mdx}',
 		'./components/**/*.{js,ts,jsx,tsx,mdx}',
 		'./app/**/*.{js,ts,jsx,tsx,mdx}',
+		'./features/**/*.{js,ts,jsx,tsx,mdx}',
 	],
 	theme: {
 		extend: {
@@ -52,7 +53,6 @@ export default {
 				},
 				react: 'hsl(var(--react))',
 				angular: 'hsl(var(--angular))',
-				nextjs: 'hsl(var(--nextjs))',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

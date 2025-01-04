@@ -1,4 +1,4 @@
-import { Skill } from "../types";
+import { Skill } from "./types";
 
 export const skills: Record<string, Skill[]> = {
 	languages: [

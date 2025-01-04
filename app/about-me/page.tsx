@@ -1,7 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import SkillSection from '@/features/about-me/components/SkillSection';
-import { skills } from '@/features/about-me/data/skills';
+import { skills } from '@/features/about-me/data';
 
 const Page = () => {
   return (
