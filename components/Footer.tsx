@@ -42,14 +42,14 @@ const Footer = () => {
         </p>
         <span className="flex gap-2">
           <a
-            href="https://www.iubenda.com/privacy-policy/67997868"
+            href={`https://www.iubenda.com/privacy-policy/${process.env.NEXT_PUBLIC_PRIVACY_POLICY_ID}`}
             className="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe "
             title="Privacy Policy "
           >
             Privacy Policy
           </a>
           <a
-            href="https://www.iubenda.com/privacy-policy/67997868/cookie-policy"
+            href={`https://www.iubenda.com/privacy-policy/${process.env.NEXT_PUBLIC_PRIVACY_POLICY_ID}cookie-policy`}
             className="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe"
             title="Cookie Policy"
           >

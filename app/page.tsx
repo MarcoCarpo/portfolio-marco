@@ -17,7 +17,15 @@ export default function Home() {
     <div className="flex justify-center flex-1 gap-10 text-center pt-20">
       <div className="flex flex-col gap-4 max-w-lg">
         <div className="w-52 h-52 relative overflow-hidden rounded-full mx-auto shadow-lg shadow-gray-500/50">
-          <Image src="/images/profile.png" alt="Marco Carpona" layout="fill" objectFit="cover" />
+          <Image
+            src="/images/profile.png"
+            alt="Marco Carpona"
+            width={520}
+            height={520}
+            style={{
+              objectPosition: 'bottom',
+            }}
+          />
         </div>
         <h2 className="text-4xl">
           Ciao <span className="animate-wave inline-block">✋🏻</span> sono{' '}
