@@ -1,11 +1,12 @@
 import React from 'react';
 import { jobs } from '@/features/jobs/data';
 import Image from 'next/image';
+import PageWrapper from '@/components/PageWrapper';
+import { CodeIcon } from '@radix-ui/react-icons';
 
 const page = () => {
   return (
-    <div className="flex flex-1 pt-10 gap-10 text-center flex-col max-w-3xl mx-auto">
-      <h2 className="text-4xl font-extrabold">Lavoro</h2>
+    <PageWrapper title="Lavoro">
       <div className="relative border-l-2 border-gray-300">
         {jobs.map((job) => (
           <div key={job.id} className="relative flex items-start gap-4 mb-10">
@@ -20,7 +21,7 @@ const page = () => {
             {/* Contenuto principale */}
             <div className="flex flex-col gap-2 p-4 bg-primary shadow-md rounded-lg w-full text-slate-50">
               <div className="flex items-left gap-2 justify-start items-center">
-                {job.logo && (
+                {job.logo ? (
                   <Image
                     width={60}
                     height={60}
@@ -28,6 +29,8 @@ const page = () => {
                     alt={`${job.title} logo`}
                     className="w-16 h-16 rounded-full object-contain shadow-lg bg-white p-1"
                   />
+                ) : (
+                  <CodeIcon className="w-16 h-16 rounded-full object-contain shadow-lg bg-primary p-1" />
                 )}
                 <div className="flex flex-col items-start">
                   <h4 className="text-lg font-bold">{job.title}</h4>
@@ -51,7 +54,7 @@ const page = () => {
           </div>
         ))}
       </div>
-    </div>
+    </PageWrapper>
   );
 };
 

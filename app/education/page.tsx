@@ -1,11 +1,11 @@
 import React from 'react';
 import { education } from '@/features/education/data';
 import Image from 'next/image';
+import PageWrapper from '@/components/PageWrapper';
 
 const Education = () => {
   return (
-    <div className="flex flex-1 pt-10 gap-10 text-center flex-col max-w-3xl mx-auto">
-      <h2 className="text-4xl font-extrabold">Istruzione e Formazione</h2>
+    <PageWrapper title="Istruzione e Formazione">
       <p className="text-sm text-gray-600">
         Ecco una panoramica del mio percorso accademico e formativo, che ha contribuito a plasmare
         le mie competenze e la mia passione per il mondo dello sviluppo web.
@@ -43,7 +43,7 @@ const Education = () => {
           </div>
         ))}
       </div>
-    </div>
+    </PageWrapper>
   );
 };
 

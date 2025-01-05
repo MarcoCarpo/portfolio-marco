@@ -32,7 +32,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-center gap-8 items-center py-4 px-8 bg-primary text-primary-foreground shadow-md">
+    <div className="flex justify-center gap-8 items-center py-4 px-8 bg-gray-800 text-primary-foreground shadow-md">
       <Link href="/" className={clsx('hover:underline', checkActive('/') && 'underline')}>
         {setTextAsTag('Home', '/')}
       </Link>
