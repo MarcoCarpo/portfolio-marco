@@ -1,7 +1,5 @@
 'use client';
 
-import { FC } from 'react';
-
 import {
   Form,
   FormControl,
@@ -16,14 +14,28 @@ import { useContactMeForm } from './hooks/useContactMeForm';
 import { sendEmail } from '../../actions/send-email';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import LoadingSpinner from '@/components/LoadingSpinner';
+import formSchema from './contactMeForm.schema';
+import { z } from 'zod';
 
-const ContactMeForm: FC = () => {
+const ContactMeForm = () => {
   const form = useContactMeForm();
+
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    try {
+      const message = await sendEmail(values);
+      alert(message);
+      form.reset();
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(sendEmail)} className="space-y-8 min-w-[400px] text-left">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 min-w-[400px] text-left">
         <FormField
+          disabled={form.formState.isSubmitting}
           control={form.control}
           name="name"
           render={({ field }) => (
@@ -63,7 +75,13 @@ const ContactMeForm: FC = () => {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit" disabled={form.formState.isSubmitting} className="w-full">
+          {form.formState.isSubmitting ? (
+            <LoadingSpinner className="w-6 h-6 text-white" />
+          ) : (
+            'Invia'
+          )}
+        </Button>
       </form>
     </Form>
   );

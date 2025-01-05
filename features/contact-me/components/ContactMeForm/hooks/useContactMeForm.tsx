@@ -7,7 +7,9 @@ export const useContactMeForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: '',
+      name: '',
+      email: '',
+      message: '',
     },
   });
 
