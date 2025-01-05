@@ -17,6 +17,7 @@ import { Textarea } from '@/components/ui/textarea';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import formSchema from './contactMeForm.schema';
 import { z } from 'zod';
+import { toast } from 'sonner';
 
 const ContactMeForm = () => {
   const form = useContactMeForm();
@@ -24,10 +25,10 @@ const ContactMeForm = () => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       const message = await sendEmail(values);
-      alert(message);
+      toast.success(message);
       form.reset();
-    } catch (error) {
-      console.error(error);
+    } catch (error: unknown) {
+      toast.error(error as string);
     }
   };
 
@@ -55,7 +56,12 @@ const ContactMeForm = () => {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="Email" {...field} type="email" />
+                <Input
+                  placeholder="Email"
+                  {...field}
+                  type="email"
+                  disabled={form.formState.isSubmitting}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -68,7 +74,13 @@ const ContactMeForm = () => {
             <FormItem>
               <FormLabel>Messaggio</FormLabel>
               <FormControl>
-                <Textarea placeholder="Messaggio" className="resize-none" rows={5} {...field} />
+                <Textarea
+                  disabled={form.formState.isSubmitting}
+                  placeholder="Messaggio"
+                  className="resize-none"
+                  rows={5}
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
               <FormDescription>Max 1000 caratteri</FormDescription>
