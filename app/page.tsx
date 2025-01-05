@@ -58,7 +58,7 @@ export default function Home() {
             </Button>
           </a>
           <Separator orientation="vertical" />
-          <Button size={'sm'} className="bg-gray-800">
+          <Button size={'sm'} className="bg-gray-800" disabled={true}>
             <DownloadIcon /> CV
           </Button>
           <Separator orientation="vertical" />
