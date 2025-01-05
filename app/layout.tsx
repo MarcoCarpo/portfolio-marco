@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import { Toaster } from 'sonner';
 import Footer from '@/components/Footer';
+import { Analytics } from '@vercel/analytics/react';
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -25,6 +26,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Toaster />
+        <Analytics />
         <Footer />
       </body>
     </html>
