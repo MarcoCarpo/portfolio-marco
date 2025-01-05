@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
+var _iub = _iub || [];
+
 const Navbar = () => {
   const path = usePathname();
   // Check the url of the page and add the active class to the corresponding link

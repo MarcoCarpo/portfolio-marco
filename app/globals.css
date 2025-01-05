@@ -109,3 +109,7 @@ body {
 .animate-wave {
   animation: wave 2s infinite;
 }
+
+.iub__us-widget {
+  @apply bg-gray-800 text-foreground;
+}

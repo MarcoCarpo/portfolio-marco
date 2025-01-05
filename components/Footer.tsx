@@ -1,4 +1,5 @@
 import { data } from '@/data';
+
 import { getCurrentYear } from '@/lib/utils';
 import { EnvelopeClosedIcon, GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
 
@@ -39,6 +40,22 @@ const Footer = () => {
         <p className="text-xs text-gray-500">
           © {getCurrentYear()} {data.name}. Tutti i diritti riservati.
         </p>
+        <span className="flex gap-2">
+          <a
+            href="https://www.iubenda.com/privacy-policy/67997868"
+            className="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe "
+            title="Privacy Policy "
+          >
+            Privacy Policy
+          </a>
+          <a
+            href="https://www.iubenda.com/privacy-policy/67997868/cookie-policy"
+            className="iubenda-white iubenda-noiframe iubenda-embed iubenda-noiframe"
+            title="Cookie Policy"
+          >
+            Cookie Policy
+          </a>
+        </span>
       </div>
     </footer>
   );

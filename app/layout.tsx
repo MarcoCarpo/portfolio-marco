@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import { Toaster } from 'sonner';
 import Footer from '@/components/Footer';
 import { Analytics } from '@vercel/analytics/react';
+import Script from 'next/script';
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -22,11 +23,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${nunito.className} antialiased min-h-screen flex flex-col`}>
-        <Navbar />
-        {children}
-        <Toaster />
-        <Analytics />
+      <Script id="csConfig" type="text/javascript">
+        {
+          'var _iub = _iub || [];_iub.csConfiguration = {"siteId":3885782,"cookiePolicyId":67997868,"lang":"it","storage":{"useSiteId":true}};'
+        }
+      </Script>
+
+      <Script
+        type="text/javascript"
+        src={`https://cs.iubenda.com/autoblocking/${process.env.NEXT_PUBLIC_SITE_ID}.js`}
+      ></Script>
+      <Script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></Script>
+      <Script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" async></Script>
+      <Script src="https://cdn.iubenda.com/iubenda.js" />
+
+      <body className={`${nunito.className} antialiased flex flex-col`}>
+        <div className="min-h-screen">
+          <Navbar />
+          {children}
+          <Toaster />
+          <Analytics />
+        </div>
         <Footer />
       </body>
     </html>

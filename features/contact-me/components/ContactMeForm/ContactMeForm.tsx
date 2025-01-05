@@ -34,7 +34,10 @@ const ContactMeForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 min-w-[400px] text-left">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-8 min-w-[400px] max-w-xl text-left mx-auto"
+      >
         <FormField
           disabled={form.formState.isSubmitting}
           control={form.control}
