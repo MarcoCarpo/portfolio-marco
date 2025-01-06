@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
     new Promise<string>((resolve, reject) => {
       transport.sendMail(getMailOptions(email, message, name), function (err) {
         if (!err) {
-          resolve('Email sent');
+          resolve('Grazie per avermi contattato!');
         } else {
           reject(err.message);
         }
