@@ -12,8 +12,8 @@ const IubendaProvider: React.FC<PropsWithChildren> = ({ children }) => {
         type="text/javascript"
         src={`https://cs.iubenda.com/autoblocking/${process.env.NEXT_PUBLIC_SITE_ID}.js`}
       ></Script>
-      <Script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></Script>
-      <Script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" async></Script>
+      {/* <Script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></Script> */}
+      {/* <Script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" async></Script> */}
       <Script src="https://cdn.iubenda.com/iubenda.js" />
       {children}
     </>

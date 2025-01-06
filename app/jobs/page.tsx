@@ -14,12 +14,12 @@ const page = () => {
             <div className="absolute left-[-9px] top-0 w-4 h-4 bg-blue-500 rounded-full border-2 border-white"></div>
 
             {/* Data a sinistra */}
-            <div className="text-sm text-gray-500 font-medium min-w-[100px] text-right pr-4 mx-2">
+            <div className="hidden md:block text-sm text-gray-500 font-medium min-w-[100px] text-right pr-4 mx-2">
               {job.period}
             </div>
 
             {/* Contenuto principale */}
-            <div className="flex flex-col gap-2 p-4 bg-primary shadow-md rounded-lg w-full text-slate-50">
+            <div className="ml-4 md:ml-0 flex flex-col gap-2 p-4 bg-primary shadow-md rounded-lg w-full text-slate-50">
               <div className="flex items-left gap-2 justify-start items-center">
                 {job.logo ? (
                   <Image
@@ -45,11 +45,11 @@ const page = () => {
                     </a>
                   </p>
                   <p className="text-sm">📍 {job.location}</p>
+
+                  <p className="text-sm text-left md:hidden">📅 {job.period}</p>
                 </div>
               </div>
-              <div>
-                <p className="text-sm text-left">{job.description}</p>
-              </div>
+              <p className="md:text-sm text-justify">{job.description}</p>
             </div>
           </div>
         ))}

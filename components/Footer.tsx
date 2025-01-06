@@ -1,13 +1,11 @@
 import { data } from '@/data';
-
 import { getCurrentYear } from '@/lib/utils';
 import { EnvelopeClosedIcon, GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
 
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-gray-400 text-sm py-4">
-      <div className="container mx-auto flex items-center justify-between gap-4">
-        {/* Links Social */}
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex gap-6">
           <a
             href={data.social.github.url}
@@ -36,7 +34,6 @@ const Footer = () => {
             <EnvelopeClosedIcon />
           </a>
         </div>
-        {/* Copyright */}
         <p className="text-xs text-gray-500">
           © {getCurrentYear()} {data.name}. Tutti i diritti riservati.
         </p>

@@ -36,7 +36,7 @@ const ContactMeForm = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 min-w-[400px] max-w-xl text-left mx-auto"
+        className="space-y-8 w-full text-left mx-auto max-w-lg"
       >
         <FormField
           disabled={form.formState.isSubmitting}
@@ -90,7 +90,11 @@ const ContactMeForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit" disabled={form.formState.isSubmitting} className="w-full">
+        <Button
+          type="submit"
+          disabled={form.formState.isSubmitting || !form.formState.isValid}
+          className="w-full bg-gray-800"
+        >
           {form.formState.isSubmitting ? (
             <LoadingSpinner className="w-6 h-6 text-white" />
           ) : (

@@ -7,7 +7,7 @@ import { skills } from '@/features/about-me/data';
 const Page = () => {
   return (
     <PageWrapper title="Chi sono">
-      <div className="text-sm">
+      <div className="text-sm text-justify">
         Sono un appassionato sviluppatore web specializzato in tecnologie frontend, con competenze
         in <Badge className="bg-react">React</Badge>, <Badge className="bg-angular">Angular</Badge>{' '}
         e <Badge>Next.js</Badge>. Laureato in Scienze e Tecnologie per l&apos;Ambiente e la Natura

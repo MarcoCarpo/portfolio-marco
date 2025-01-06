@@ -40,15 +40,15 @@ export default function Home() {
         <h2 className="text-xl"> 📍 {data.location}</h2>
         <Email />
       </div>
-      <div className="flex flex-wrap gap-4 justify-center">
+      <div className="flex flex-col gap-2 md:gap-4 md:flex-row">
         <a
           href={data.social.linkedin.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-white"
+          className="hover:text-white w-full"
           aria-label="LinkedIn"
         >
-          <Button size={'sm'} className="bg-gray-800">
+          <Button className="bg-gray-800 w-full">
             <LinkedInLogoIcon />
             Linkedin
           </Button>
@@ -61,12 +61,12 @@ export default function Home() {
           className="hover:text-white"
           aria-label="GitHub"
         >
-          <Button size={'sm'} className="bg-gray-800">
+          <Button className="bg-gray-800 w-full">
             <GitHubLogoIcon /> GitHub
           </Button>
         </a>
         <Separator orientation="vertical" />
-        <Button size={'sm'} className="bg-gray-800" disabled={true}>
+        <Button className="bg-gray-800 w-full" disabled={true}>
           <DownloadIcon /> CV
         </Button>
         <Separator orientation="vertical" />
@@ -77,7 +77,7 @@ export default function Home() {
           aria-label="Email"
           target="_blank"
         >
-          <Button size={'sm'} className="bg-gray-800">
+          <Button className="bg-gray-800 w-full">
             <EnvelopeClosedIcon /> Email
           </Button>
         </a>

@@ -13,16 +13,13 @@ const Education = () => {
       <div className="relative border-l-2 border-gray-300">
         {education.map((edu) => (
           <div key={edu.id} className="relative flex items-start gap-4 mb-10">
-            {/* Nodo della timeline */}
             <div className="absolute left-[-9px] top-0 w-4 h-4 bg-blue-500 rounded-full border-2 border-white"></div>
 
-            {/* Data a sinistra */}
-            <div className="text-sm text-gray-500 font-medium min-w-[100px] text-right pr-4 mx-2">
+            <div className="hidden md:inline-block text-sm text-gray-500 font-medium min-w-[100px] text-right pr-4 mx-2">
               {edu.period}
             </div>
 
-            {/* Contenuto principale */}
-            <div className="flex flex-col items-start gap-2 p-4 bg-white shadow-md rounded-lg w-full">
+            <div className="flex flex-col items-start gap-2 p-4 bg-white shadow-md rounded-lg w-full ml-4 md:ml-0">
               {edu.logo && (
                 <Image
                   width={48}
@@ -37,6 +34,11 @@ const Education = () => {
               {edu.vote && (
                 <p className="text-sm text-gray-500">
                   <span className="font-bold">Voto:</span> {edu.vote}
+                </p>
+              )}
+              {edu.period && (
+                <p className="text-sm text-gray-500 md:hidden">
+                  <span className="font-bold">Periodo:</span> {edu.period}
                 </p>
               )}
             </div>

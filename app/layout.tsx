@@ -24,13 +24,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <IubendaProvider>
-        <body className={`${nunito.className} antialiased flex flex-col`}>
-          <div className="min-h-screen">
-            <Navbar />
-            {children}
-            <Toaster />
-            <Analytics />
-          </div>
+        <body className={`${nunito.className} antialiased flex flex-col min-h-screen`}>
+          <Navbar />
+          {children}
+          <Toaster />
+          <Analytics />
+
           <Footer />
         </body>
       </IubendaProvider>

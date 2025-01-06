@@ -35,13 +35,13 @@ const Navbar = () => {
 
   return (
     <div className="bg-gray-800 text-primary-foreground shadow-md">
-      <div className="flex justify-between items-center py-4 px-8">
+      <div className="flex items-center py-4 px-8">
         <button
           className="md:hidden text-primary-foreground focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
         >
           <svg
-            className="w-6 h-6"
+            className="w-8 h-8"
             fill="none"
             stroke="currentColor"
             strokeWidth={2}
@@ -55,7 +55,7 @@ const Navbar = () => {
             />
           </svg>
         </button>
-        <div className="hidden md:flex gap-8 items-center">
+        <div className="hidden md:flex gap-8 items-center justify-center mx-auto">
           <Link href="/" className={clsx('hover:underline', checkActive('/') && 'underline')}>
             {setTextAsTag('Home', '/')}
           </Link>
@@ -87,7 +87,7 @@ const Navbar = () => {
       </div>
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden flex flex-col gap-4 items-center py-4 px-8 bg-gray-800">
+        <div className="md:hidden flex flex-col gap-4 items-center py-4 px-8 bg-gray-800 text-xl">
           <Link
             href="/"
             className={clsx('hover:underline', checkActive('/') && 'underline')}
