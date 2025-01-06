@@ -1,7 +1,7 @@
 import React from 'react';
 import { education } from '@/features/education/data';
-import Image from 'next/image';
 import PageWrapper from '@/components/PageWrapper';
+import { GraduationCap } from 'lucide-react';
 
 const Education = () => {
   return (
@@ -20,15 +20,10 @@ const Education = () => {
             </div>
 
             <div className="flex flex-col items-start gap-2 p-4 bg-white shadow-md rounded-lg w-full ml-4 md:ml-0">
-              {edu.logo && (
-                <Image
-                  width={48}
-                  height={48}
-                  src={edu.logo}
-                  alt={`${edu.title} logo`}
-                  className="w-10 h-10 rounded-full object-cover"
-                />
-              )}
+              <GraduationCap
+                size={40}
+                className="shadow-lg bg-slate-800 p-1 rounded-full text-white"
+              />
               <h4 className="text-lg font-bold">{edu.title}</h4>
               <p className="text-sm text-gray-700">{edu.subtitle}</p>
               {edu.vote && (
