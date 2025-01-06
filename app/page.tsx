@@ -40,12 +40,12 @@ export default function Home() {
         <h2 className="text-xl"> 📍 {data.location}</h2>
         <Email />
       </div>
-      <div className="flex flex-col gap-2 md:gap-4 md:flex-row">
+      <div className="flex flex-col gap-2 md:gap-4 md:flex-row md:justify-center">
         <a
           href={data.social.linkedin.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-white w-full"
+          className="hover:text-white w-full md:w-fit"
           aria-label="LinkedIn"
         >
           <Button className="bg-gray-800 w-full">
@@ -58,7 +58,7 @@ export default function Home() {
           href={data.social.github.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-white"
+          className="hover:text-white md:w-fit w-full"
           aria-label="GitHub"
         >
           <Button className="bg-gray-800 w-full">
@@ -66,7 +66,7 @@ export default function Home() {
           </Button>
         </a>
         <Separator orientation="vertical" />
-        <Button className="bg-gray-800 w-full" disabled={true}>
+        <Button className="bg-gray-800 w-full md:w-fit md:px-8" disabled={true}>
           <DownloadIcon /> CV
         </Button>
         <Separator orientation="vertical" />
@@ -84,8 +84,11 @@ export default function Home() {
       </div>
       <div>
         <Link href="/contact-me">
-          <Button className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold shadow-lg hover:shadow-xl hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all">
-            Contattami
+          <Button
+            size="lg"
+            className="mt-10 md:mt-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold shadow-lg hover:shadow-xl hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all w-full md:w-fit"
+          >
+            🚀 Contattami
           </Button>
         </Link>
       </div>
