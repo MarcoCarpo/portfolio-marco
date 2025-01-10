@@ -1,0 +1,49 @@
+{
+	"Navbar": {
+		"home": "Home",
+		"bio": "Bio",
+		"education": "Education",
+		"work": "Work",
+		"contact_me": "Contact me"
+	},
+	"Home": {
+		"hello": "Hello!",
+		"i_am_name": "I am <name>{name}</name>",
+		"frontend_developer": "💻 <frontend>Frontend</frontend> developer",
+		"global_change_ecology_gratuated": "Graduated in Global Change Ecology",
+		"linkedin": "LinkedIn",
+		"github": "GitHub",
+		"email": "Email",
+		"resume": "Resume",
+		"contact_me": "Contact me"
+	},
+	"Bio": {
+		"bio": "Bio",
+		"bio_text": "I am a passionate web developer specialized in frontend technologies, with skills in <react>React</react>, <angular>Angular</angular>, and <next>Next.js</next>. Graduated in Environmental Sciences and Technologies for the Bachelor's degree and later in Global Change Ecology at the University of Trieste, I carry forward a dual passion for computer science and nature.",
+		"current_bio_text": "Currently, I work in the IT sector as a Web Developer, contributing to the success of the projects I am part of. I have collaborated on significant projects, using Agile methodologies to ensure efficient and flexible project management.",
+		"languages": "Languages",
+		"frameworks_libraries": "Frameworks & Libraries",
+		"tools": "Tools"
+	},
+	"Education": {
+		"education": "Education",
+		"education_text": "Here is an overview of my academic and training path, which has helped shape my skills and passion for the world of web development.",
+		"vote": "Vote",
+		"period": "Period"
+	},
+	"Work": {
+		"work": "Work"
+	},
+	"ContactMe": {
+		"contact_me": "Contact me",
+		"contact_me_text": "If you want to get in touch with me, send me a message! I will be happy to answer your questions or discuss any collaboration opportunities.",
+		"name": "Name",
+		"email": "Email",
+		"message": "Message",
+		"enter_your_name": "Enter your name",
+		"enter_your_email": "Enter your email",
+		"enter_your_message": "Enter your message",
+		"max_length": "Max {chars} characters",
+		"send": "Send"
+	}
+}

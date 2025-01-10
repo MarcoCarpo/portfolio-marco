@@ -5,19 +5,15 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
+import { useTranslations } from 'use-intl';
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const NavLink = ({ href, text, onClick }: { href: string; text: string; onClick?: () => void }) => {
   const path = usePathname();
-
-  // Check the url of the page and add the active class to the corresponding link
-  const checkActive = (href: string) => {
-    return path === href;
-  };
+  const checkActive = (href: string) => path === href;
 
   const setTextAsTag = (text: string, path: string): React.ReactNode => {
     return (
-      <>
+      <span onClick={onClick}>
         <span
           className={cn('font-bold', 'main-gradient', checkActive(path) ? 'visible' : 'invisible')}
         >
@@ -29,9 +25,20 @@ const Navbar = () => {
         >
           {' />'}
         </span>
-      </>
+      </span>
     );
   };
+
+  return (
+    <Link href={href} className={clsx('hover:underline', checkActive(href) && 'underline')}>
+      {setTextAsTag(text, href)}
+    </Link>
+  );
+};
+
+const Navbar = () => {
+  const t = useTranslations('Navbar');
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="bg-gray-800 text-primary-foreground shadow-md">
@@ -56,73 +63,21 @@ const Navbar = () => {
           </svg>
         </button>
         <div className="hidden md:flex gap-8 items-center justify-center mx-auto">
-          <Link href="/" className={clsx('hover:underline', checkActive('/') && 'underline')}>
-            {setTextAsTag('Home', '/')}
-          </Link>
-          <Link
-            href="/about-me"
-            className={clsx('hover:underline', checkActive('/about-me') && 'underline')}
-          >
-            {setTextAsTag('Bio', '/about-me')}
-          </Link>
-          <Link
-            href="/education"
-            className={clsx('hover:underline', checkActive('/education') && 'underline')}
-          >
-            {setTextAsTag('Istruzione e Formazione', '/education')}
-          </Link>
-          <Link
-            href="/jobs"
-            className={clsx('hover:underline', checkActive('/jobs') && 'underline')}
-          >
-            {setTextAsTag('Lavoro', '/jobs')}
-          </Link>
-          <Link
-            href="/contact-me"
-            className={clsx('hover:underline', checkActive('/contact-me') && 'underline')}
-          >
-            {setTextAsTag('Contattami', '/contact-me')}
-          </Link>
+          <NavLink href="/" text={t('home')} />
+          <NavLink href="/about-me" text={t('bio')} />
+          <NavLink href="/education" text={t('education')} />
+          <NavLink href="/jobs" text={t('work')} />
+          <NavLink href="/contact-me" text={t('contact_me')} />
         </div>
       </div>
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden flex flex-col gap-4 items-center py-4 px-8 bg-gray-800 text-xl">
-          <Link
-            href="/"
-            className={clsx('hover:underline', checkActive('/') && 'underline')}
-            onClick={() => setIsOpen(false)}
-          >
-            {setTextAsTag('Home', '/')}
-          </Link>
-          <Link
-            href="/about-me"
-            className={clsx('hover:underline', checkActive('/about-me') && 'underline')}
-            onClick={() => setIsOpen(false)}
-          >
-            {setTextAsTag('Bio', '/about-me')}
-          </Link>
-          <Link
-            href="/education"
-            className={clsx('hover:underline', checkActive('/education') && 'underline')}
-            onClick={() => setIsOpen(false)}
-          >
-            {setTextAsTag('Istruzione e Formazione', '/education')}
-          </Link>
-          <Link
-            href="/jobs"
-            className={clsx('hover:underline', checkActive('/jobs') && 'underline')}
-            onClick={() => setIsOpen(false)}
-          >
-            {setTextAsTag('Lavoro', '/jobs')}
-          </Link>
-          <Link
-            href="/contact-me"
-            className={clsx('hover:underline', checkActive('/contact-me') && 'underline')}
-            onClick={() => setIsOpen(false)}
-          >
-            {setTextAsTag('Contattami', '/contact-me')}
-          </Link>
+          <NavLink href="/" text={t('home')} onClick={() => setIsOpen(false)} />
+          <NavLink href="/about-me" text={t('bio')} onClick={() => setIsOpen(false)} />
+          <NavLink href="/education" text={t('education')} onClick={() => setIsOpen(false)} />
+          <NavLink href="/jobs" text={t('work')} onClick={() => setIsOpen(false)} />
+          <NavLink href="/contact-me" text={t('contact_me')} onClick={() => setIsOpen(false)} />
         </div>
       )}
     </div>

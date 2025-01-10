@@ -1,0 +1,46 @@
+{
+	"Navbar": {
+		"home": "Home",
+		"bio": "Bio",
+		"education": "Education",
+		"work": "Lavoro",
+		"contact_me": "Contattami"
+	},
+	"Home": {
+		"hello": "Ciao!",
+		"i_am_name": "Sono <name>{name}</name>",
+		"frontend_developer": "💻 <frontend>Frontend</frontend> developer",
+		"global_change_ecology_gratuated": "Laureato in Global Change Ecology",
+		"linkedin": "LinkedIn",
+		"github": "GitHub",
+		"email": "Email",
+		"resume": "CV",
+		"contact_me": "Contattami"
+	},
+	"Bio": {
+		"bio": "Bio",
+		"bio_text": "Sono un appassionato sviluppatore web specializzato in tecnologie frontend, con competenze in <react>React</react>, <angular>Angular</angular> e <next>Next.js</next>. Laureato in Scienze e Tecnologie per l'Ambiente e la Natura in triennale e successivamente in Global Change Ecology presso l'Università di Trieste, porto avanti una duplice passione per l'informatica e la natura.",
+		"current_bio_text": "Attualmente, lavoro nel settore dell'IT come Sviluppatore Web, contribuendo al successo dei progetti di cui faccio parte. Ho collaborato a progetti di rilevanza, utilizzando metodologie Agile per garantire una gestione efficiente e flessibile dei progetti."
+	},
+	"Education": {
+		"education": "Education",
+		"education_text": "Ecco una panoramica del mio percorso accademico e formativo, che ha contribuito a plasmare le mie competenze e la mia passione per il mondo dello sviluppo web.",
+		"vote": "Voto",
+		"period": "Periodo"
+	},
+	"Work": {
+		"work": "Lavoro"
+	},
+	"ContactMe": {
+		"contact_me": "Contattami",
+		"contact_me_text": "Se vuoi metterti in contatto con me, inviami un messaggio! Sarò felice di rispondere alle tue domande o discutere eventuali opportunità di collaborazione.",
+		"name": "Nome",
+		"email": "Email",
+		"message": "Messaggio",
+		"enter_your_name": "Inserisci il tuo nome",
+		"enter_your_email": "Inserisci la tua email",
+		"enter_your_message": "Inserisci il tuo messaggio",
+		"max_length": "Max {chars} caratteri",
+		"send": "Invia"
+	}
+}

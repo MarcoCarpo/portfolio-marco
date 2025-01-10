@@ -18,8 +18,10 @@ import LoadingSpinner from '@/components/LoadingSpinner';
 import formSchema from './contactMeForm.schema';
 import { z } from 'zod';
 import { toast } from 'sonner';
+import { useTranslations } from 'next-intl';
 
 const ContactMeForm = () => {
+  const t = useTranslations('ContactMe');
   const form = useContactMeForm();
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
@@ -44,9 +46,9 @@ const ContactMeForm = () => {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Nome</FormLabel>
+              <FormLabel>{t('name')}</FormLabel>
               <FormControl>
-                <Input placeholder="Nome" {...field} />
+                <Input placeholder={t('enter_your_name')} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -57,10 +59,10 @@ const ContactMeForm = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>{t('email')}</FormLabel>
               <FormControl>
                 <Input
-                  placeholder="Email"
+                  placeholder={t('enter_your_email')}
                   {...field}
                   type="email"
                   disabled={form.formState.isSubmitting}
@@ -75,18 +77,18 @@ const ContactMeForm = () => {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Messaggio</FormLabel>
+              <FormLabel>{t('message')}</FormLabel>
               <FormControl>
                 <Textarea
                   disabled={form.formState.isSubmitting}
-                  placeholder="Messaggio"
+                  placeholder={t('enter_your_message')}
                   className="resize-none"
                   rows={5}
                   {...field}
                 />
               </FormControl>
               <FormMessage />
-              <FormDescription>Max 1000 caratteri</FormDescription>
+              <FormDescription>{t('max_length', { chars: 1000 })}</FormDescription>
             </FormItem>
           )}
         />
@@ -98,7 +100,7 @@ const ContactMeForm = () => {
           {form.formState.isSubmitting ? (
             <LoadingSpinner className="w-6 h-6 text-white" />
           ) : (
-            'Invia'
+            t('send')
           )}
         </Button>
       </form>

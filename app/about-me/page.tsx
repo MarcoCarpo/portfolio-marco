@@ -3,26 +3,27 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import SkillSection from '@/features/about-me/components/SkillSection';
 import { skills } from '@/features/about-me/data';
+import { useTranslations } from 'next-intl';
 
 const Page = () => {
+  const t = useTranslations('Bio');
+
   return (
-    <PageWrapper title="Chi sono">
+    <PageWrapper title={t('bio')}>
       <div className="text-sm text-justify">
-        Sono un appassionato sviluppatore web specializzato in tecnologie frontend, con competenze
-        in <Badge className="bg-react">React</Badge>, <Badge className="bg-angular">Angular</Badge>{' '}
-        e <Badge>Next.js</Badge>. Laureato in Scienze e Tecnologie per l&apos;Ambiente e la Natura
-        in triennale e successivamente in Global Change Ecology presso l&apos;Università di Trieste,
-        porto avanti una duplice passione per l&apos;informatica e la natura.
+        {t.rich('bio_text', {
+          react: (react) => <Badge className="bg-react">{react}</Badge>,
+          angular: (angular) => <Badge className="bg-angular">{angular}</Badge>,
+          next: (next) => <Badge>{next}</Badge>,
+        })}
         <Separator className="max-w-20 mx-auto my-4" />
-        Attualmente, lavoro nel settore dell&apos;IT come Sviluppatore Web, contribuendo al successo
-        dei progetti di cui faccio parte. Ho collaborato a progetti di rilevanza, utilizzando
-        metodologie Agile per garantire una gestione efficiente e flessibile dei progetti.
+        {t('current_bio_text')}
       </div>
 
       <div className="flex flex-col gap-5 my-4">
-        <SkillSection title="Linguaggi" skills={skills.languages} />
-        <SkillSection title="Frameworks/Librerie" skills={skills.frameworks} />
-        <SkillSection title="Tool" skills={skills.tools} />
+        <SkillSection title={t('languages')} skills={skills.languages} />
+        <SkillSection title={t('frameworks_libraries')} skills={skills.frameworks} />
+        <SkillSection title={t('tools')} skills={skills.tools} />
       </div>
     </PageWrapper>
   );

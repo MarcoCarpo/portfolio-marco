@@ -6,6 +6,8 @@ import { Toaster } from 'sonner';
 import Footer from '@/components/Footer';
 import { Analytics } from '@vercel/analytics/react';
 import IubendaProvider from '@/features/iubenda/components/IubendaProvider';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages } from 'next-intl/server';
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -16,22 +18,27 @@ export const metadata: Metadata = {
   description: 'Welcome on my personal website!',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <IubendaProvider>
-        <body className={`${nunito.className} antialiased flex flex-col min-h-screen`}>
-          <Navbar />
-          {children}
-          <Toaster />
-          <Analytics />
+  const locale = await getLocale();
+  const messages = await getMessages();
 
-          <Footer />
-        </body>
+  return (
+    <html lang={locale}>
+      <IubendaProvider>
+        <NextIntlClientProvider messages={messages}>
+          <body className={`${nunito.className} antialiased flex flex-col min-h-screen`}>
+            <Navbar />
+            {children}
+            <Toaster />
+            <Analytics />
+
+            <Footer />
+          </body>
+        </NextIntlClientProvider>
       </IubendaProvider>
     </html>
   );

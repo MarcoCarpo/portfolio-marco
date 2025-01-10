@@ -10,10 +10,13 @@ import {
   GitHubLogoIcon,
   LinkedInLogoIcon,
 } from '@radix-ui/react-icons';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Home() {
+  const t = useTranslations('Home');
+
   return (
     <PageWrapper>
       <div className="w-52 h-52 relative overflow-hidden rounded-full mx-auto shadow-lg shadow-gray-500/50">
@@ -25,18 +28,23 @@ export default function Home() {
           style={{
             objectPosition: 'bottom',
           }}
+          priority={true}
         />
       </div>
       <h2 className="text-4xl">
-        Ciao <span className="animate-wave inline-block">✋🏻</span> sono{' '}
-        <span className="font-extrabold main-gradient">{data.name}</span>!
+        {t('hello')} <span className="animate-wave inline-block">✋🏻</span>
+        {t.rich('i_am_name', {
+          name: () => <span className="font-extrabold main-gradient">{data.name}</span>,
+        })}
+        !
       </h2>
       <div>
         <h2 className="text-xl">
-          {' '}
-          💻 Sviluppatore web <span className="main-gradient">Frontend</span>
+          {t.rich('frontend_developer', {
+            frontend: (frontend) => <span className="main-gradient">{frontend}</span>,
+          })}
         </h2>
-        <h2 className="text-xl"> 🍃 Laureato in Global Change Ecology</h2>
+        <h2 className="text-xl"> 🍃 {t('global_change_ecology_gratuated')}</h2>
         <h2 className="text-xl"> 📍 {data.location}</h2>
         <Email />
       </div>
@@ -50,7 +58,7 @@ export default function Home() {
         >
           <Button className="bg-gray-800 w-full">
             <LinkedInLogoIcon />
-            Linkedin
+            {t('linkedin')}
           </Button>
         </a>
         <Separator orientation="vertical" />
@@ -62,12 +70,12 @@ export default function Home() {
           aria-label="GitHub"
         >
           <Button className="bg-gray-800 w-full">
-            <GitHubLogoIcon /> GitHub
+            <GitHubLogoIcon /> {t('github')}
           </Button>
         </a>
         <Separator orientation="vertical" />
         <Button className="bg-gray-800 w-full md:w-fit md:px-8" disabled={true}>
-          <DownloadIcon /> CV
+          <DownloadIcon /> {t('resume')}
         </Button>
         <Separator orientation="vertical" />
 
@@ -78,7 +86,7 @@ export default function Home() {
           target="_blank"
         >
           <Button className="bg-gray-800 w-full">
-            <EnvelopeClosedIcon /> Email
+            <EnvelopeClosedIcon /> {t('email')}
           </Button>
         </a>
       </div>
@@ -88,7 +96,7 @@ export default function Home() {
             size="lg"
             className="mt-10 md:mt-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold shadow-lg hover:shadow-xl hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all w-full md:w-fit"
           >
-            🚀 Contattami
+            🚀 {t('contact_me')}
           </Button>
         </Link>
       </div>

@@ -2,16 +2,17 @@ import React from 'react';
 import { education } from '@/features/education/data';
 import PageWrapper from '@/components/PageWrapper';
 import { GraduationCap } from 'lucide-react';
+import { useTranslations, useLocale } from 'next-intl';
 
 const Education = () => {
+  const t = useTranslations('Education');
+  const locale = useLocale() as keyof typeof education;
+
   return (
-    <PageWrapper title="Istruzione e Formazione">
-      <p className="text-sm text-gray-600">
-        Ecco una panoramica del mio percorso accademico e formativo, che ha contribuito a plasmare
-        le mie competenze e la mia passione per il mondo dello sviluppo web.
-      </p>
+    <PageWrapper title={t('education')}>
+      <p className="text-sm text-gray-600">{t('education_text')}</p>
       <div className="relative border-l-2 border-gray-300">
-        {education.map((edu) => (
+        {education[locale].map((edu) => (
           <div key={edu.id} className="relative flex items-start gap-4 mb-10">
             <div className="absolute left-[-9px] top-0 w-4 h-4 bg-blue-500 rounded-full border-2 border-white"></div>
 
@@ -28,12 +29,12 @@ const Education = () => {
               <p className="text-sm text-gray-700">{edu.subtitle}</p>
               {edu.vote && (
                 <p className="text-sm text-gray-500">
-                  <span className="font-bold">Voto:</span> {edu.vote}
+                  <span className="font-bold">{t('vote')}:</span> {edu.vote}
                 </p>
               )}
               {edu.period && (
                 <p className="text-sm text-gray-500 md:hidden">
-                  <span className="font-bold">Periodo:</span> {edu.period}
+                  <span className="font-bold">{t('period')}:</span> {edu.period}
                 </p>
               )}
             </div>
