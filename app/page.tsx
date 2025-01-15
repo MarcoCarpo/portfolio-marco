@@ -74,9 +74,11 @@ export default function Home() {
           </Button>
         </a>
         <Separator orientation="vertical" />
-        <Button className="bg-gray-800 w-full md:w-fit md:px-8" disabled={true}>
-          <DownloadIcon /> {t('resume')}
-        </Button>
+        <a href="/cv.pdf" target="_blank" download>
+          <Button className="bg-gray-800 w-full md:w-fit md:px-8">
+            <DownloadIcon /> {t('resume')}
+          </Button>
+        </a>
         <Separator orientation="vertical" />
 
         <a

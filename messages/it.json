@@ -2,7 +2,7 @@
 	"Navbar": {
 		"home": "Home",
 		"bio": "Bio",
-		"education": "Education",
+		"education": "Formazione",
 		"work": "Lavoro",
 		"contact_me": "Contattami"
 	},
@@ -23,7 +23,7 @@
 		"current_bio_text": "Attualmente, lavoro nel settore dell'IT come Sviluppatore Web, contribuendo al successo dei progetti di cui faccio parte. Ho collaborato a progetti di rilevanza, utilizzando metodologie Agile per garantire una gestione efficiente e flessibile dei progetti."
 	},
 	"Education": {
-		"education": "Education",
+		"education": "Formazione",
 		"education_text": "Ecco una panoramica del mio percorso accademico e formativo, che ha contribuito a plasmare le mie competenze e la mia passione per il mondo dello sviluppo web.",
 		"vote": "Voto",
 		"period": "Periodo"
