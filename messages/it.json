@@ -20,7 +20,10 @@
 	"Bio": {
 		"bio": "Bio",
 		"bio_text": "Sono un appassionato sviluppatore web specializzato in tecnologie frontend, con competenze in <react>React</react>, <angular>Angular</angular> e <next>Next.js</next>. Laureato in Scienze e Tecnologie per l'Ambiente e la Natura in triennale e successivamente in Global Change Ecology presso l'Università di Trieste, porto avanti una duplice passione per l'informatica e la natura.",
-		"current_bio_text": "Attualmente, lavoro nel settore dell'IT come Sviluppatore Web, contribuendo al successo dei progetti di cui faccio parte. Ho collaborato a progetti di rilevanza, utilizzando metodologie Agile per garantire una gestione efficiente e flessibile dei progetti."
+		"current_bio_text": "Attualmente, lavoro nel settore dell'IT come Sviluppatore Web, contribuendo al successo dei progetti di cui faccio parte. Ho collaborato a progetti di rilevanza, utilizzando metodologie Agile per garantire una gestione efficiente e flessibile dei progetti.",
+		"languages": "Linguaggi",
+		"frameworks_libraries": "Framework & Librerie",
+		"tools": "Tool"
 	},
 	"Education": {
 		"education": "Formazione",
